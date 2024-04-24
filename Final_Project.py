@@ -34,23 +34,41 @@ class Quiz:
         percentage_score = (correct_answers / num_questions) * 100
         print(f"\nYou got {correct_answers} out of {num_questions} questions correct.")
         print(f"Your percentage score is: {percentage_score:.2f}%")
-"""A unit test will be taken for the question and quiz classes and will be in a seperate file"""
+"""A unit test will be taken for the question and quiz classes and will be in a separate file"""
 
 
-"""Make some sample data to input for the quizes with different themes"""
+"""Make some sample data to input for the quizzes with different themes"""
 
 def sample_quizzes():
     math_quiz = Quiz("Math")
     math_quiz.add_question("How many degrees does a triangle have?", "180")
     math_quiz.add_question("Square root of 25?", "5")
+    math_quiz.add_question("9*9?", "81")
+    math_quiz.add_question("How many sides does a pentagon have?", "5")
+    math_quiz.add_question("What are the first 3 digits of pi?", "3.14")
 
     history_quiz = Quiz("History")
     history_quiz.add_question("What year was the University of Maryland founded?", "1856")
+    history_quiz.add_question("Which empire was Julius Caesar part of?", "Roman Empire")
+    history_quiz.add_question("When was the U.S founded?", "1776")
+    history_quiz.add_question("What year did WW2 end?", "1945")
+    history_quiz.add_question("Who 'discovered' the Americas?", "Christopher Columbus")
 
     science_quiz = Quiz("Science")
     science_quiz.add_question("What is the name of gold on the periodic table?", "AU")
+    science_quiz.add_question("What is the molecular name of water?", "H2O")
+    science_quiz.add_question("What is the process of which plants 'eat'?", "Photosynthesis")
+    science_quiz.add_question("What is the center of an Atom called?", "Nucleus")
+    science_quiz.add_question("What is the name of our galaxy?", "Milky Way")
 
-    return math_quiz, history_quiz, science_quiz
+    geography_quiz = Quiz("Geography")
+    geography_quiz.add_question("What continent is the U.S.A located in?", "North America")
+    geography_quiz.add_question("How many continents are there?", "7")
+    geography_quiz.add_question("How many oceans are there?", "5")
+    geography_quiz.add_question("As of 2024, what is the most populated country?", "India")
+    geography_quiz.add_question("What is the largest country by land area?", "Russia")
+
+    return math_quiz, history_quiz, science_quiz, geography_quiz
 
 """Create Main function here"""
 def main():
@@ -59,8 +77,9 @@ def main():
     print("1. Math")
     print("2. Science")
     print("3. History")
+    print("4. Geography")
 
-    choice = input("Enter your choice (1/2/3): ")
+    choice = input("Enter your choice (1/2/3/4): ")
 
     if choice == "1":
         math_quiz = sample_quizzes()[0]
@@ -71,8 +90,11 @@ def main():
     elif choice == "3":
         history_quiz = sample_quizzes()[1]
         history_quiz.run_quiz()
+    elif choice == "4":
+        geography_quiz = sample_quizzes()[1]
+        geography_quiz.run_quiz()
     else:
-        print("Invalid choice. Please enter 1, 2, or 3.")
+        print("Invalid choice. Please enter 1, 2, 3, or 4.")
 
 """Pass the main function to if__name__ statement"""
 if __name__ == "__main__":
