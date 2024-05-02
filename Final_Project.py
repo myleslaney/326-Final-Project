@@ -91,7 +91,7 @@ def main():
         history_quiz = sample_quizzes()[1]
         history_quiz.run_quiz()
     elif choice == "4":
-        geography_quiz = sample_quizzes()[1]
+        geography_quiz = sample_quizzes()[4]
         geography_quiz.run_quiz()
     else:
         print("Invalid choice. Please enter 1, 2, 3, or 4.")
